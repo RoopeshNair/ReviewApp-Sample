@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: roopeshnairreviewappsample 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: roopeshnairreviewappsample 
+    spec:
+      containers:
+        - name: roopeshnairreviewappsample 
+          image: ronacr.azurecr.io/roopeshnairreviewappsample
+          ports:
+          - containerPort: 80
