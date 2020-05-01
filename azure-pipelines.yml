@@ -11,7 +11,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '231c193a-1636-44f4-a43e-90a8ff2c21db'
+  dockerRegistryServiceConnection: 'ReviewAppSample-dev-reviews-1588361244949'
   imageRepository: 'roopeshnairreviewappsample'
   containerRegistry: 'ronacr.azurecr.io'
   dockerfilePath: '**/Dockerfile'
@@ -56,7 +56,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'RoopeshNairReviewAppSample.colors'
+    environment: 'ReviewAppSample.reviews'
     strategy:
       runOnce:
         deploy:
@@ -86,7 +86,7 @@ stages:
     pool:
       vmImage: $(vmImageName)
       
-    environment: 'RoopeshNairReviewAppSample.$(k8sNamespaceForPR)'
+    environment: 'ReviewAppSample.$(k8sNamespaceForPR)'
     strategy:
       runOnce:
         deploy:
